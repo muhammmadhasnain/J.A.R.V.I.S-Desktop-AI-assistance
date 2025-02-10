@@ -2,64 +2,70 @@ Jarvis AI - Voice Assistant
 
 Overview
 
-Jarvis AI is a voice-controlled virtual assistant built using Python. It can recognize speech, respond using text-to-speech, perform web searches, open files, and generate AI-based responses using Google Gemini API.
+Jarvis AI is a voice-controlled assistant that can perform various tasks such as opening websites, playing music, and interacting with Google's Gemini AI for intelligent responses.
 
 Features
 
-Speech Recognition: Uses the speech_recognition library to understand user commands.
+Voice Recognition: Listens to user commands using speech_recognition.
 
-Text-to-Speech (TTS): Uses SAPI.SpVoice to convert AI responses into speech.
+Speech Synthesis: Responds via voice using win32com.client.
 
-Web Browsing: Opens websites like Google, Wikipedia, and ChatGPT on command.
+AI Responses: Uses Google Gemini AI to generate responses.
 
-File Management: Opens specific files and folders on request.
+Web Browsing: Opens popular websites like Google, Wikipedia, and ChatGPT.
 
-AI-Powered Responses: Uses Google Gemini API to generate intelligent responses.
+File and Music Management: Opens specific files or music based on voice commands.
 
-Continuous Listening: Runs in a loop to constantly listen for new commands.
+Requirements
 
-Installation
+To run this project, you need to install the following dependencies:
 
-Prerequisites
+pip install SpeechRecognition pywin32 google-generativeai
 
-Ensure you have the following installed:
+Additionally, you need an API key for Google Gemini AI, which should be stored in config.py as:
 
-Python 3.x
+apikey = "YOUR_GOOGLE_API_KEY"
 
-Required Python libraries:
-
-pip install speechrecognition pywin32 google-generativeai
-
-A valid Google Gemini API key (stored in config.py as apikey).
-
-Usage
+How to Use
 
 Run the script:
 
-python jarvis.py
+python script.py
 
-Speak commands like:
+Jarvis AI will greet you and start listening for commands.
+
+You can use commands like:
 
 "Open Google"
 
-"Open music"
+"Open Wikipedia"
 
-"Using artificial intelligence, tell me about space"
+"Open file"
 
-"Jarvis quit" (to exit)
+"Using artificial intelligence [your query]"
 
-File Structure
+"Jarvis quit" (to exit the program)
 
-Jarvis-AI/
-│── jarvis.py            # Main script
-│── config.py            # API key storage
-│── openai/              # Folder for AI-generated responses
-│── README.md            # Project documentation
+If a command is not recognized, it will default to chatting with the AI.
 
-Future Improvements
+File Handling
 
-Add support for more commands (weather updates, reminders, etc.)
+AI-generated responses are saved in the openai/ directory.
 
-Improve speech recognition accuracy
+The filename is based on the user's prompt.
 
-Implement a GUI interface
+Exiting the Program
+
+Say "Jarvis quit" to stop the assistant.
+
+Future Enhancements
+
+Add more website shortcuts.
+
+Improve error handling in speech recognition.
+
+Implement additional AI models for enhanced responses.
+
+Author
+
+This project is developed as a basic implementation of a personal AI assistant using Python.
